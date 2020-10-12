@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.dao.ReceAddressMapper">
+
+<select id="getAddress" parameterType="java.lang.Integer" resultType="ReceAddress">
+
+select * from rece_address where user_id = #{id}
+</select>
+
+<update id="updateAddress" parameterType="ReceAddress">
+	update rece_address
+	<set>
+		<if test="addres.recename != null and addres.recename != ''">
+			recename = #{addres.recename},
+		</if>
+		<if test="addres.address != null and addres.address != ''">
+			address = #{addres.address},
+		</if>
+
+		<if test="addres.zipcode != null and addres.zipcode != ''">
+			zipcode = #{addres.zipcode},
+		</if>
+		<if test="addres.iphone != null and addres.iphone != ''">
+			iphone = #{addres.iphone},
+		</if>
+	</set>
+	where id = #{addres.id}
+</update>
+
+<insert id="addAddress" parameterType="java.lang.Integer">
+
+INSERT INTO rece_address (user_id) VALUES (#{userId})
+</insert>
+</mapper>

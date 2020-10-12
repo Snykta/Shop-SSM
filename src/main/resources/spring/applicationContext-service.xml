@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.3.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+	<!--所有service的bean都在里面  -->
+	<bean id="userServiceImpl" class="com.ssm.service.impl.UserServiceImpl"/>
+	<!-- 商品种类 -->
+	<bean id="typeServiceImpl" class="com.ssm.service.impl.TypeServiceImpl"></bean>
+	<!-- 收货地址 -->
+	<bean id="receAddressImppl" class="com.ssm.service.impl.ReceAddressImppl"></bean>
+	<!--  商品详情-->
+	<bean id="goodsServiceImpl" class="com.ssm.service.impl.GoodsServiceImpl"></bean>
+	<!-- 购物车 -->
+	<bean id="cartServiceImpl" class="com.ssm.service.impl.CartServiceImpl"></bean>
+	<!-- 订单 -->
+	<bean id="ordersServiceImpl" class="com.ssm.service.impl.OrdersServiceImpl"></bean>
+	
+	
+	<!-- 后台管理员 -->
+	<bean id="adminUserServiceImpl" class="com.ssm.service.impl.admin.AdminUserServiceImpl"></bean>
+	
+	<!-- 后台管理员权限 -->
+	<bean id="shiroServiceImpl" class="com.ssm.service.impl.ShiroServiceImpl"></bean>
+</beans>

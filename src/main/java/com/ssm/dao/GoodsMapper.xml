@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.dao.GoodsMapper">
+
+<select id="getIdGoods" parameterType="java.lang.Integer" resultType="Goods">
+
+select * from shop_goods where id = #{id}
+</select>
+
+<select id="roundGoods" resultType="Goods">
+SELECT 
+  * 
+FROM
+  shop_goods 
+WHERE id >= 
+  (SELECT 
+    FLOOR(RAND() * 
+      (SELECT 
+        MAX(id) 
+      FROM
+        shop_goods))) 
+ORDER BY id 
+LIMIT 0, 2
+</select>
+
+
+
+<select id="getTypeIdList" parameterType="java.lang.Integer" resultType="GoodsList">
+SELECT 
+  shop_type.type_name,
+  shop_goods.* 
+FROM
+  shop_type,
+  shop_goods
+WHERE shop_type.`id` = shop_goods.`goods_type` 
+  AND shop_type.`id` =#{id}
+</select>
+
+
+<select id="searchByName" parameterType="String" resultType="Goods">
+
+SELECT * FROM shop_goods WHERE goods_name LIKE '%${value}%'
+</select>
+
+
+<!-- 多对一查询 -->
+<resultMap type="com.ssm.po.GoodsVo" id="ManyOneResultMap">
+<id column="id" property="id"/>
+<result column="goods_name" property="goods_name"/>
+<result column="goods_unit" property="goods_unit"/>
+<result column="goods_stock" property="goods_stock"/>
+<result column="goods_price" property="goods_price"/>
+<result column="goods_type" property="goods_type"/>
+<association property="goodsType" javaType="com.ssm.po.GoodsType">
+<id column="tid" property="id"/>
+<result column="type_name" property="type_name"/>
+</association>
+
+</resultMap>
+
+
+<select id="AdminManyToOne" resultMap="ManyOneResultMap" parameterType="java.lang.Integer">
+(SELECT 
+  g.*,
+  t.`id` tid,
+  t.`type_name` 
+FROM
+  shop_goods g 
+  LEFT JOIN shop_type t 
+    ON g.`goods_type` = t.`id`) limit #{num},8
+</select>
+
+
+<select id="Admincounts" resultType="int">
+select count(*) from shop_goods
+</select>
+
+<delete id="AdminDelGoods" parameterType="java.lang.Integer">
+DELETE FROM shop_goods WHERE id = #{id}
+</delete>
+
+<delete id="AdminDels">
+DELETE FROM shop_goods WHERE id IN
+	<foreach collection="array" item="id" open="(" separator=","
+		close=")">
+		#{id}
+	</foreach>
+</delete>
+
+<update id="adminUpdatGoods" parameterType="Goods">
+UPDATE 
+  shop_goods 
+SET
+  goods_name = #{goods_name},
+  goods_unit = #{goods_unit},
+  goods_stock = #{goods_stock},
+  goods_price = #{goods_price},
+  goods_present = #{goods_present} 
+WHERE id = #{id} 
+
+</update>
+
+<insert id="adminAddGoods" parameterType="Goods">
+
+INSERT INTO shop_goods (
+  `goods_name`,
+  `goods_unit`,
+  `goods_stock`,
+  `goods_price`,
+  `goods_present`,
+  `goods_type`,
+  `goods_img`
+) 
+VALUES
+  (#{goods_name},#{goods_unit},#{goods_stock},#{goods_price},#{goods_present},#{goods_type},#{goods_img}) ;
+
+</insert>
+
+<update id="adminUpdateByType" parameterType="Goods">
+
+UPDATE shop_goods SET goods_type=#{goods_type} WHERE id = #{id}
+</update>
+</mapper>

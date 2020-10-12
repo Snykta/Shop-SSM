@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.dao.AdminUserMapper">
+
+<select id="adminLogin" parameterType="AdminUser" resultType="AdminUser">
+
+select * from admin_users where admin_user =#{admin_user} and admin_pwd = #{admin_pwd}
+</select>
+
+<select id="GetAdmin" resultType="AdminUserOV">
+SELECT 
+  admin_users.*,
+  admin_shiro.`shiro_name` 
+FROM
+  admin_users,
+  admin_shiro 
+WHERE admin_users.`admin_shiro` = admin_shiro.`id` 
+</select>
+</mapper>

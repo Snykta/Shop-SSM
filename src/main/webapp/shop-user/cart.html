@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>天天生鲜-购物车</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+	<div class="header_con">
+		<div class="header">
+			<div class="welcome fl">欢迎来到天天生鲜!</div>
+			<div class="fr">
+				<div class="login_btn fl" id="userPs">
+					<a href="login.html">登录</a>
+					<span>|</span>
+					<a href="register.html">注册</a>
+				</div>
+				<div class="user_link fl">
+					<span>|</span>
+					<a href="user_center_info.html">用户中心</a>
+					<span>|</span>
+					<a href="cart.html">我的购物车</a>
+					<span>|</span>
+					<a href="user_center_order.html">我的订单</a>
+					<span>|</span>
+					<a href="/Shop-SSM/loginOut.do">退出</a>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="search_bar clearfix">
+		<a href="index.html" class="logo fl"><img src="../images/logo.png"></a>
+		<div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;购物车</div>
+	
+	</div>
+
+	<div class="total_count">全部商品<em id="ems"></em>件</div>	 
+	
+	
+	<ul class="cart_list_th clearfix">
+		<li class="col01">商品名称</li>
+		<li class="col02">商品单位</li>
+		<li class="col03">商品价格</li>
+		<li class="col04">数量</li>
+		<li class="col05">小计</li>
+		<li class="col06">操作</li>
+	</ul>
+	<div id="cart_lists">
+	
+	
+	
+	
+	</div>
+	
+	
+	
+
+
+	<ul class="settlements">
+		<li class="col01"><input type="checkbox" id="btn_check"></li>
+		<li class="col02"><input type="button" id="btn" value="删除"/></li>
+		<li class="col03">合计(不含运费)：<span>¥</span><em id="count_prices"></em><br>共计<b id="countB"></b>件商品</li>
+		<li class="col04"><a id="jiesu" href="">去结算</a></li>
+	</ul>
+
+	<div class="footer">
+		<p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
+		<p>电话：010-****888    京ICP备*******8号</p>
+	</div>
+	
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="../js/pages/layui.all.js"></script>	
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>	
+<script type="text/javascript" src="../js/cartList.js"></script>	
+
+
+<script>
+function login_success() {
+	if($.cookie('shop-users')!=null){
+		$('#userPs').html("欢迎您：<span style='color: red'>"+eval("(" + $.cookie('shop-users') + ")")['users']+"</span>");
+	}
+}
+
+login_success();
+
+$('#jiesu').attr('href','place_order.html?id='+eval("(" + $.cookie('shop-users') + ")")['id'])
+</script>
+</body>
+</html>

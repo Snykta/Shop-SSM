@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.dao.OrdersMapper">
+
+
+<select id="getCount" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+
+ SELECT COUNT(*) FROM orders where order_userid = #{num}
+</select>
+
+
+<select id="FenyeList" parameterType="java.lang.Integer" resultType="GoodsOrders">
+
+SELECT * FROM orders WHERE order_userid = #{order_userid}  LIMIT #{page},3
+</select>
+
+
+<delete id="deleteByidOrders" parameterType="java.lang.Integer">
+DELETE FROM orders WHERE id = #{id}
+</delete>
+
+
+<update id="PayOrders" parameterType="java.lang.Integer">
+UPDATE orders SET order_succ= 1 WHERE id = #{id}
+</update>
+
+
+<insert id="addOrdersMappers" parameterType="GoodsOrders">
+insert into `orders`
+            (
+             `order_userid`,
+             `address`,
+             `pay_type`,
+             `goods_name`,
+             `goods_num`,
+             `goods_price`,
+             `order_date`,
+             `order_succ`,
+             `order_counts`,
+             `order_code`,
+             `order_state`)
+values (
+        #{order_userid},
+        #{address},
+        #{pay_type},
+        #{goods_name},
+        #{goods_num},
+        #{goods_price},
+        #{order_date},
+        #{order_succ},
+        #{order_counts},
+        #{order_code},
+        #{order_state});
+</insert>
+
+
+<select id="adminDaiOrWaitPay" resultType="GoodsOrders" parameterType="java.lang.Integer">
+
+ SELECT * FROM orders WHERE order_succ = #{status}
+
+</select>
+
+<select id="adminlogisticsWait" resultType="GoodsOrders" parameterType="String">
+
+ select * from orders where order_state = #{status}
+
+</select>
+
+<update id="adminFahuoOrders" parameterType="java.lang.Integer">
+ UPDATE orders SET order_state = '查物流'  WHERE id = #{id}
+</update>
+
+<select id="adminGetByorder_id" resultType="GoodsOrders" parameterType="java.lang.Integer">
+
+ select * from orders where order_userid = #{id}
+</select>
+</mapper>

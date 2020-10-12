@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.dao.UserMapper">
+
+<select id="loginUsers" parameterType="String" resultType="UserP">
+select * from shop_user where users=#{users} and password = #{password}
+</select>
+
+<update id="updateUsers" parameterType="UserP">
+  UPDATE shop_user SET email=#{email},iphone=#{iphone},address=#{address} WHERE id = #{id}
+</update>
+
+<select id="getUsersId" parameterType="java.lang.Integer" resultType="UserP">
+select * from shop_user where id = #{id}
+</select>
+
+<update id="updatePwds" parameterType="UserP">
+
+UPDATE shop_user SET PASSWORD=#{password} WHERE id = #{id}
+
+</update>
+    
+    <insert id="addPlUsers" parameterType="UserP">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+    select last_insert_id()
+    </selectKey>
+    INSERT INTO `shop_user`
+            ( `users`,
+             `password`,
+             `email`,
+             `iphone`,
+             `address`)
+VALUES (#{users},
+        #{password},
+        #{email},
+       '无',
+        '无');
+    
+    </insert>
+    
+  <select id="AdminGetUser" resultType="UserP">
+  
+  SELECT * FROM shop_user
+  </select>
+  
+  <delete id="AdminDelsUsers" parameterType="java.lang.Integer">
+  
+  delete from shop_user where id = #{id}
+  </delete>
+  
+  
+  <resultMap type="com.ssm.po.UserPVo" id="OnetoManyOrde">
+  <id column="userId" property="id"/>
+  <result column="users" property="users"/>
+  <collection property="lists" ofType="com.ssm.po.GoodsOrders">
+  <id column="orderId" property="id"/>
+  <result column="goods_name" property="goods_name"/>
+  </collection>
+  </resultMap>
+  
+  <select id="AdminOneToManyOrdes" resultMap="OnetoManyOrde">
+select 
+  s.id userId,
+  s.users,
+  o.id orderId,
+  o.goods_name 
+from
+  shop_user s 
+  left join orders o 
+    on s.id = o.order_userid
+  </select>
+    
+</mapper>

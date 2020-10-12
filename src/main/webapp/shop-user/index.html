@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>天天生鲜-首页</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../js/slide.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+</head>
+<body>
+	<div class="header_con">
+		<div class="header">
+			<div class="welcome fl">欢迎来到天天生鲜!</div>
+			<div class="fr">
+				<div class="login_btn fl" id="userPs">
+					<a href="login.html">登录</a>
+					<span>|</span>
+					<a href="register.html">注册</a>
+				</div>
+				<div class="user_link fl">
+					<span>|</span>
+					<a href="user_center_info.html">用户中心</a>
+					<span>|</span>
+					<a href="cart.html">我的购物车</a>
+					<span>|</span>
+					<a href="user_center_order.html">我的订单</a>
+					<span>|</span>
+					<a href="/Shop-SSM/loginOut.do">退出</a>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="search_bar clearfix">
+		<a href="index.html" class="logo fl"><img src="../images/logo.png"></a>
+		<div class="search_con fl">
+			<input type="text" class="input_text fl" id="nAmes" placeholder="搜索商品">
+			<input type=button class="input_btn fr" id="sous" value="搜索">
+		</div>
+	</div>
+
+	<div class="navbar_con">
+		<div class="navbar">
+			<h1 class="fl">全部商品分类</h1>
+		</div>
+	</div>
+
+	<div class="center_con clearfix">
+		<ul class="subnav fl">
+			<li><a href="#model01" class="fruit">新鲜水果</a></li>
+			<li><a href="#model02" class="seafood">海鲜水产</a></li>
+			<li><a href="#model03" class="meet">猪牛羊肉</a></li>
+			<li><a href="#model04" class="egg">禽类蛋品</a></li>
+			<li><a href="#model05" class="vegetables">新鲜蔬菜</a></li>
+			<li><a href="#model06" class="ice">速冻食品</a></li>
+		</ul>
+		<div class="slide fl">
+			<ul class="slide_pics">
+				<li><img src="../images/slide.jpg" alt="幻灯片"></li>
+				<li><img src="../images/slide02.jpg" alt="幻灯片"></li>
+				<li><img src="../images/slide03.jpg" alt="幻灯片"></li>
+				<li><img src="../images/slide04.jpg" alt="幻灯片"></li>
+			</ul>
+			<div class="prev"></div>
+			<div class="next"></div>
+			<ul class="points"></ul>
+		</div>
+		<div class="adv fl">
+			<a href="#"><img src="../images/adv01.jpg"></a>
+			<a href="#"><img src="../images/adv02.jpg"></a>
+		</div>
+	</div>
+
+<div id="indexs"></div>
+
+<script type="text/javascript">
+var str = "";
+		$.ajax({
+			 url : "/Shop-SSM/getGoods.do",
+	         type : "get",
+	         dataType: "json",
+	         success : function (m) {
+	        	 console.log(m)
+	        	Getlists(m)
+	        	$('#indexs').append(str)
+	         }
+		});
+
+		function Getlists(arry) {
+			var num = 1;
+			var sum = 0;
+			for(var i in arry){
+				sum++;
+				if(sum>6){
+					break;
+				}
+				str+="<div class='list_model'>"
+				str+="<div class='list_title clearfix'>"
+				str+="<h3 class='fl' id='model0"+num+"'>"+arry[i]["type_name"]+"</h3>"
+				str+="<div class='subtitle fl'>"
+				str+="<span>|</span>"
+				str+="<a href='detail.html?id="+arry[i]["lists"][0]["id"]+"'>"+arry[i]["lists"][0]["goods_name"]+"</a>"
+				str+="<a href='detail.html?id="+arry[i]["lists"][1]["id"]+"'>"+arry[i]["lists"][1]["goods_name"]+"</a>"
+				str+="<a href='detail.html?id="+arry[i]["lists"][2]["id"]+"'>"+arry[i]["lists"][2]["goods_name"]+"</a>"
+				str+="</div>"
+				str+="<a href='list.html?id="+arry[i]["id"]+"' class='goods_more fr' id='fruit_more'>查看更多 ></a>"
+				str+="</div>"
+				str+="<div class='goods_con clearfix'>"
+			    str+="<div class='goods_banner fl'><img src='../images/banner0"+(num++)+".jpg'></div>"
+			    str+="<ul class='goods_list fl'>"
+				for(var j=0;j<4;j++){
+					str+="<li>"
+					str+="<h4><a href='detail.html?id="+arry[i]["lists"][j]["id"]+"'>"+arry[i]["lists"][j]["goods_name"]+"</a></h4>"
+					str+="<a href='detail.html?id="+arry[i]["lists"][j]["id"]+"'><img src='http://localhost:8080/test/"+arry[i]["lists"][j]["goods_img"]+"'></a>"
+					str+="<div class='prize'>¥ "+arry[i]["lists"][j]["goods_price"]+"</div>"
+					str+="</li>"
+					
+				}
+			    str+="</ul>"
+				str+="</div></div>"
+				
+				
+			}
+			
+			
+		}
+		
+function login_success() {
+	
+	if($.cookie('shop-users')!=null){
+		$('#userPs').html("欢迎您：<span style='color: red'>"+eval("(" + $.cookie('shop-users') + ")")['users']+"</span>");
+	}
+}
+
+login_success();
+
+
+
+$('#sous').click(function () {
+	location.href="search_List.html?name="+$('#nAmes').val()
+})
+
+</script>
+	<div class="footer">
+		<p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
+		<p>电话：010-****888    京ICP备*******8号</p>
+	</div>
+</body>
+</html>

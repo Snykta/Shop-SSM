@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.dao.GoodsTypeMapper">
+
+
+<resultMap type="com.ssm.po.GoodsTypeCustom" id="goodslist">
+<id column="id" property="id"/>
+<result column="type_name" property="type_name"/>
+<result column="date" property="date"/>
+<collection property="lists" ofType="com.ssm.po.Goods">
+<id column="gid" property="id"/>
+<result column="goods_name" property="goods_name"/>
+<result column="goods_img" property="goods_img"/>
+<result column="goods_price" property="goods_price"/>
+</collection>
+</resultMap>
+
+<select id="goodsIndex" resultMap="goodslist">
+SELECT 
+  t.*,
+  g.`goods_name`,
+  g.`goods_img`,
+  g.`goods_price`,
+  g.`id` gid 
+FROM
+  shop_type t 
+  LEFT JOIN shop_goods g 
+    ON t.`id` = g.`goods_type` 
+</select>
+
+
+<delete id="admin_del_type" parameterType="java.lang.Integer">
+DELETE FROM shop_type WHERE id = #{id}
+</delete>
+
+<insert id="AdminaddType" parameterType="GoodsType">
+
+INSERT INTO shop_type (type_name,date) VALUES(#{type_name},#{date})
+</insert>
+
+<select id="AdminGetIdType" parameterType="java.lang.Integer" resultType="GoodsType">
+select * from  shop_type where id = #{id}
+</select>
+
+<update id="AdminUpdateType" parameterType="GoodsType">
+
+UPDATE shop_type SET type_name=#{type_name} WHERE id = #{id}
+</update>
+
+
+</mapper>
