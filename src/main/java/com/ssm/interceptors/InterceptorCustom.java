@@ -29,11 +29,11 @@ public class InterceptorCustom implements HandlerInterceptor{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
 		String url = request.getRequestURI();
 		System.out.println(url);
-		Object user=request.getSession().getAttribute("shop-users");//前台session
+		Object user=request.getSession().getAttribute("shop-users");
 		
 		if(user==null) {
 			response.setContentType("text/html;charset=utf-8");
-			response.getWriter().write("<script>alert('请先登录再访问！');location.href='/Shop-SSM/shop-user/login.html';</script>");			
+			response.getWriter().write("<script>alert('璇峰厛鐧诲綍鍐嶈闂紒');location.href='/Shop-SSM/shop-user/login.html';</script>");
 			return false;
 		}
 

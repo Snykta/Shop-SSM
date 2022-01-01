@@ -7,7 +7,7 @@ public interface OrdersServiceInter {
 	String getCounts(Integer num) throws Exception;
 	
 	/**
-	 * ·ÖÒ³²éÑ¯
+	 * åˆ†é¡µæŸ¥è¯¢
 	 * @param page
 	 * @return
 	 * @throws Exception
@@ -18,7 +18,7 @@ public interface OrdersServiceInter {
 	String delByidOrders(Integer id) throws Exception;
 	
 	/**
-	 * ¸¶¿î
+	 * ä»˜æ¬¾
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -27,7 +27,7 @@ public interface OrdersServiceInter {
 	
 	
 	/**
-	 * ĞÂÔö
+	 * æ–°å¢
 	 * @param goodsOrders
 	 * @return
 	 * @throws Exception
@@ -35,7 +35,7 @@ public interface OrdersServiceInter {
 	String addOrders(String lists) throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±²éÑ¯´ıÖ§¸¶£¬ÒÑÖ§¸¶µÈµÈ......¶©µ¥ĞÅÏ¢
+	 * ç®¡ç†å‘˜æŸ¥è¯¢å¾…æ”¯ä»˜ï¼Œå·²æ”¯ä»˜ç­‰ç­‰......è®¢å•ä¿¡æ¯
 	 * @return
 	 * @throws Exception
 	 */
@@ -43,7 +43,7 @@ public interface OrdersServiceInter {
 	
 	
 	/**
-	 * ¹ÜÀíÔ±²éÑ¯ÒÑ·¢»õ£¬Î´·¢»õµÈµÈ......¶©µ¥ĞÅÏ¢
+	 * ç®¡ç†å‘˜æŸ¥è¯¢å·²å‘è´§ï¼Œæœªå‘è´§ç­‰ç­‰......è®¢å•ä¿¡æ¯
 	 * @param status
 	 * @return
 	 * @throws Exception
@@ -51,7 +51,7 @@ public interface OrdersServiceInter {
 	String adminLogistics(String status) throws  Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±É¾³ı¶©µ¥
+	 * ç®¡ç†å‘˜åˆ é™¤è®¢å•
 	 * @param id
 	 * @param shiro_id
 	 * @return
@@ -59,7 +59,7 @@ public interface OrdersServiceInter {
 	 */
 	String adminDelsOrders(Integer id,Integer shiro_id) throws Exception;
 	/**
-	 * ¹ÜÀíÔ±·¢»õ
+	 * ç®¡ç†å‘˜å‘è´§
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -67,7 +67,7 @@ public interface OrdersServiceInter {
 	boolean adminFaOrdes(Integer id) throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±²é¿´µ¥¸öÓÃ»§ÆìÏÂµÄ¶©µ¥
+	 * ç®¡ç†å‘˜æŸ¥çœ‹å•ä¸ªç”¨æˆ·æ——ä¸‹çš„è®¢å•
 	 * @param id
 	 * @return
 	 * @throws Exception

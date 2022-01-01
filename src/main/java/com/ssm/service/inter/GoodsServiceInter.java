@@ -4,21 +4,21 @@ import com.ssm.po.Goods;
 
 public interface GoodsServiceInter {
 	/**
-	 * 以id查询商品
+	 * 浠d鏌ヨ鍟嗗搧
 	 * @param id
 	 * @return
 	 * @throws Exception
 	 */
 	String getIdGoods(Integer id) throws Exception;
 	/**
-	 * 随机产生商品
+	 * 闅忔満浜х敓鍟嗗搧
 	 * @return
 	 * @throws Exception
 	 */
 	String roundGoods() throws Exception;
 	
 	/**
-	 * 以种类id查询,同时分页
+	 * 浠ョ绫籭d鏌ヨ,鍚屾椂鍒嗛〉
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -26,7 +26,7 @@ public interface GoodsServiceInter {
 	String getTypeIdList(Integer id) throws Exception;
 	
 	/**
-	 * 查询商品
+	 * 鏌ヨ鍟嗗搧
 	 * @param name
 	 * @return
 	 * @throws Exception
@@ -34,18 +34,18 @@ public interface GoodsServiceInter {
 	String secahByBanmes(String name) throws Exception;
 	
 	/**
-	 * 多对一查询
+	 * 澶氬涓�鏌ヨ
 	 * @return
 	 * @throws Exception
 	 */
 	String AdminManyToOne(Integer num) throws Exception;
 	
 	/*
-	 * 总数
+	 * 鎬绘暟
 	 */
 	String AdminCounts() throws Exception;
 	/**
-	 * 管理员删除商品
+	 *
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -53,7 +53,7 @@ public interface GoodsServiceInter {
 	String AdmindelGoods(Integer id,Integer shiro_id) throws Exception;
 	
 	/**
-	 * 批量删除goods
+	 *
 	 * @param ids
 	 * @return
 	 * @throws Exception
@@ -61,7 +61,7 @@ public interface GoodsServiceInter {
 	String AdminDels(String ids,Integer shiro_id) throws Exception;
 	
 	/***
-	 * 管理员修改商品
+	 *
 	 * @param goods
 	 * @return
 	 * @throws Exception
@@ -69,14 +69,14 @@ public interface GoodsServiceInter {
 	boolean AdminupdaGoods(Goods goods) throws Exception;
 	
 	/**
-	 * 管理员添加商品
+	 *
 	 * @param goods
 	 * @return
 	 * @throws Exception
 	 */
 	boolean AdminAddGood(Goods goods) throws Exception;
 	/**
-	 * 管理员转移商品类别
+	 *
 	 * @param goods
 	 * @return
 	 * @throws Exception

@@ -5,16 +5,16 @@ import org.apache.ibatis.annotations.Param;
 import com.ssm.po.GoodsOrders;
 public interface OrdersMapper {
 	
-	int getCount(Integer num) throws Exception;//²éÑ¯×ÜÊı
+	int getCount(Integer num) throws Exception;//æŸ¥è¯¢æ€»æ•°
 	
 	/*
 	 *
-	 * ·ÖÒ³²éÑ¯
+	 *  åˆ†é¡µæŸ¥è¯¢
 	 */
 	List<GoodsOrders> FenyeList(@Param("page")Integer page,@Param("order_userid")Integer order_userid) throws Exception;
 	
 	/**
-	 * É¾³ıorders
+	 * åˆ é™¤orders
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -22,14 +22,14 @@ public interface OrdersMapper {
 	int deleteByidOrders(Integer id) throws Exception;
 	
 	/**
-	 * ¸¶¿î
+	 * ä»˜æ¬¾
 	 * @param id
 	 * @return
 	 * @throws Exception
 	 */
 	int PayOrders(Integer id) throws Exception;
 	/**
-	 * ĞÂÔö¶©µ¥
+	 *æ–°å¢è®¢å•
 	 * @param goodsOrders
 	 * @return
 	 * @throws Exception
@@ -38,14 +38,14 @@ public interface OrdersMapper {
 	int addOrdersMappers(GoodsOrders goodsOrders) throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±²éÑ¯´ıÖ§¸¶,ÒÑÖ§¸¶µÈµÈ......¶©µ¥µÄĞÅÏ¢
+	 * ç®¡ç†å‘˜æŸ¥è¯¢å¾…æ”¯ä»˜,å·²æ”¯ä»˜ç­‰ç­‰......è®¢å•çš„ä¿¡æ¯
 	 * @return
 	 * @throws Exception
 	 */
 	List<GoodsOrders> adminDaiOrWaitPay(Integer status) throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±²éÑ¯ÒÑ·¢»õ,Î´·¢»õµÈµÈ......¶©µ¥µÄĞÅÏ¢
+	 * ç®¡ç†å‘˜æŸ¥è¯¢å·²å‘è´§,æœªå‘è´§ç­‰ç­‰......è®¢å•çš„ä¿¡æ¯
 	 * @param status
 	 * @return
 	 * @throws Exception
@@ -53,7 +53,7 @@ public interface OrdersMapper {
 	List<GoodsOrders> adminlogisticsWait(String status) throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±·¢»õ
+	 * ç®¡ç†å‘˜å‘è´§
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -61,7 +61,7 @@ public interface OrdersMapper {
 	int adminFahuoOrders(Integer id) throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±²é¿´ÓÃ»§ÏÂµÄ¶©µ¥
+	 * ç®¡ç†å‘˜æŸ¥çœ‹ç”¨æˆ·ä¸‹çš„è®¢å•
 	 * @param id
 	 * @return
 	 * @throws Exception

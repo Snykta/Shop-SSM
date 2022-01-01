@@ -79,7 +79,7 @@ public class GoodsHandler {
 			response.sendRedirect("/Shop-SSM/admin/goods_list.html");
 		}else {
 			response.setContentType("text/html;charset=utf-8");
-			response.getWriter().println("<script>alert('ĞŞ¸ÄÊ§°Ü£¡');location.href='/Shop-SSM/admin/goods_list.html';</script>");
+			response.getWriter().println("<script>alert('ä¿®æ”¹å¤±è´¥ï¼');location.href='/Shop-SSM/admin/goods_list.html';</script>");
 		}
 		
 	}
@@ -87,19 +87,19 @@ public class GoodsHandler {
 	
 	@RequestMapping("/AdminaddGoods.do")
 	public void AdminaddGoods(Goods good,HttpServletResponse response,MultipartFile imgs) throws Exception{
-		String oldImg  = imgs.getOriginalFilename();//»ñÈ¡Í¼Æ¬Ô­Ê¼Ãû×Ö
+		String oldImg  = imgs.getOriginalFilename();//è·å–å›¾ç‰‡åŸå§‹åå­—
 		if(imgs!=null && oldImg!=null && oldImg.length()>0) {
 			String path = "E:\\apache-tomcat-9.0.11\\webapps\\test\\";
 			File file = new File(path+oldImg);
-			imgs.transferTo(file);//Ğ´Èë´ÅÅÌ
-			good.setGoods_img(oldImg);//Ğ´ÈëÍ¬Ê±¸øÍ¼Æ¬ÊôĞÔ¸³Öµ£¬ÒÔ±ã´æÈëÊı¾İ¿â
+			imgs.transferTo(file);//å†™å…¥ç£ç›˜
+			good.setGoods_img(oldImg);//å†™å…¥åŒæ—¶ç»™å›¾ç‰‡å±æ€§èµ‹å€¼ï¼Œä»¥ä¾¿å­˜å…¥æ•°æ®åº“
 		}
 		boolean falg = goods.AdminAddGood(good);
 		if(falg) {
 			response.sendRedirect("/Shop-SSM/admin/goods_list.html");
 		}else {
 			response.setContentType("text/html;charset=utf-8");
-			response.getWriter().println("<script>alert('Ìí¼ÓÊ§°Ü£¡');location.href='/Shop-SSM/admin/goods_list.html';</script>");
+			response.getWriter().println("<script>alert('ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½');location.href='/Shop-SSM/admin/goods_list.html';</script>");
 		}
 		
 	}
@@ -112,7 +112,7 @@ public class GoodsHandler {
 			response.sendRedirect("/Shop-SSM/admin/goods_type_update.html");
 		}else {
 			response.setContentType("text/html;charset=utf-8");
-			response.getWriter().println("<script>alert('×ªÒÆÊ§°Ü£¡');location.href='/Shop-SSM/admin/goods_list.html';</script>");
+			response.getWriter().println("<script>alert('è½¬ç§»å¤±è´¥ï¼');location.href='/Shop-SSM/admin/goods_list.html';</script>");
 		}
 		
 	}

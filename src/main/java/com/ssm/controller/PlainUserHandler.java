@@ -61,7 +61,7 @@ public class PlainUserHandler {
 	@ResponseBody
 	public String adminDelsUsers(Integer id,Integer shiro_id)throws Exception{
 		if(id==null||shiro_id==null) {
-			return "<script>alert('·Ç·¨ÇëÇó£¡');location.href='/Shop-SSM/admin/index.html';</script>";
+			return "<script>alert('éæ³•è¯·æ±‚ï¼');location.href='/Shop-SSM/admin/index.html';</script>";
 		}else {
 			return serviceInter.AdminDleuser(id, shiro_id);
 		}
@@ -80,13 +80,13 @@ public class PlainUserHandler {
 	@ResponseBody
 	public String addPlainUsers(UserP userP) throws Exception{
 		if(userP.getUsers()==null||userP==null) {
-			return "<script>alert('·Ç·¨ÇëÇó£¡');location.href='/Shop-SSM/shop-user/register.html';</script>";
+			return "<script>alert('éæ³•è¯·æ±‚ï¼');location.href='/Shop-SSM/shop-user/register.html';</script>";
 		}else {
 			boolean falg = serviceInter.addPlusers(userP);
 			if(falg) {
-				return "<script>alert('×¢²á³É¹¦');location.href='/Shop-SSM/shop-user/login.html';</script>";
+				return "<script>alert('æ³¨å†ŒæˆåŠŸ');location.href='/Shop-SSM/shop-user/login.html';</script>";
 			}else {
-				return "<script>alert('×¢²áÊ§°Ü');location.href='/Shop-SSM/shop-user/register.html';</script>";
+				return "<script>alert('æ³¨å†Œå¤±è´¥');location.href='/Shop-SSM/shop-user/register.html';</script>";
 			}
 		}
 	}

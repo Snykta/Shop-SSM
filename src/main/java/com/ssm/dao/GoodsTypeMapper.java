@@ -8,14 +8,14 @@ import com.ssm.po.GoodsTypeCustom;
 public interface GoodsTypeMapper {
 	
 	/**
-	 * Ê×Ò³Õ¹Ê¾
+	 * é¦–é¡µå±•ç¤º
 	 * @return
 	 * @throws Exception
 	 */
 	List<GoodsTypeCustom> goodsIndex() throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±É¾³ıÀà±ğ
+	 * ç®¡ç†å‘˜åˆ é™¤ç±»åˆ«
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -23,21 +23,21 @@ public interface GoodsTypeMapper {
 	int admin_del_type(Integer id) throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±Ìí¼ÓÀà±ğ
+	 * ç®¡ç†å‘˜æ·»åŠ ç±»åˆ«
 	 * @param type_name
 	 * @return
 	 * @throws Exception
 	 */
 	int AdminaddType(GoodsType type) throws Exception;
 	/**
-	 * ÒÔid²éÑ¯
+	 * ä»¥idæŸ¥è¯¢
 	 * @param id
 	 * @return
 	 * @throws Exception
 	 */
 	GoodsType AdminGetIdType(Integer id) throws Exception;
 	/**
-	 * ¸üĞÂtype
+	 * æ›´æ–°type
 	 * @param type
 	 * @return
 	 * @throws Exception

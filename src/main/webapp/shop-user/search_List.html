@@ -117,7 +117,7 @@ function list_goods(arry) {
 	
 	for(var i in arry){
 	 str+="<li>";
-	 str+="<a href='detail.html?id="+arry[i]["id"]+"'><img src='http://localhost:8080/test/"+arry[i]["goods_img"]+"'></a>"
+	 str+="<a href='detail.html?id="+arry[i]["id"]+"'><img src='../images/"+arry[i]["goods_img"]+"'></a>"
 	str+="<h4><a href='detail.html?id="+arry[i]["id"]+"'>"+arry[i]["goods_name"]+"</a></h4>"
 	str+="<div class='operate'>"
 	str+="<span class='priz'>￥"+arry[i]["goods_price"]+"</span>"

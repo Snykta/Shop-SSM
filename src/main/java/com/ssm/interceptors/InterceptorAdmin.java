@@ -12,11 +12,11 @@ public class InterceptorAdmin implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-//		Object adminUser = request.getSession().getAttribute("admin-users");//ºóÌ¨session
+//		Object adminUser = request.getSession().getAttribute("admin-users");//ï¿½ï¿½Ì¨session
 //		
 //		if(adminUser==null) {
 //			response.setContentType("text/html;charset=utf-8");
-//			response.getWriter().write("<script>alert('ÇëÏÈµÇÂ¼ÔÙ·ÃÎÊ£¡');location.href='/Shop-SSM/admin/login.html';</script>");			
+//			response.getWriter().write("<script>alert('è¯·å…ˆç™»å½•å†è®¿é—®!');location.href='/Shop-SSM/admin/login.html';</script>");
 //			return false;
 //		}
 		

@@ -9,14 +9,14 @@ import com.ssm.po.AdminShiroS;
 public interface AdminShiro {
 	
 	/**
-	 * ²éÑ¯ËùÓĞÈ¨ÏŞ
+	 * æŸ¥è¯¢æ‰€æœ‰æƒé™
 	 * @return
 	 * @throws Exception
 	 */
 	List<AdminShiroS> ShiroGets() throws Exception;
 	
 	/**
-	 * ¸üĞÂ¹ÜÀíÔ±È¨ÏŞ
+	 * æ›´æ–°ç®¡ç†å‘˜æƒé™
 	 * @param shiroId
 	 * @param userId
 	 * @return

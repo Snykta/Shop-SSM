@@ -7,7 +7,7 @@ import java.util.Random;
 public class Time {
 	
 	/**
-	 * 获取时间
+	 *鑾峰彇鏃堕棿
 	 * @return
 	 */
 	public static String getTimes() {
@@ -18,7 +18,7 @@ public class Time {
 	}
 	
 	/**
-	 * 将时间定义为订单
+	 * 灏嗘椂闂村畾涔変负璁㈠崟
 	 * @return
 	 */
 	public static int getTimeCode() {

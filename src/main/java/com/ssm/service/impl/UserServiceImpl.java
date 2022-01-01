@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserServiceInter {
 			map.put("state", "1");
 			String jsonUser = JSONObject.toJSONString(userP);
 			System.out.println(jsonUser);
-			Cookie cookies = new Cookie("shop-users", java.net.URLEncoder.encode(jsonUser, "UTF-8"));//序列化
+			Cookie cookies = new Cookie("shop-users", java.net.URLEncoder.encode(jsonUser, "UTF-8"));
 			HttpServletResponse response =((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getResponse();
 			response.addCookie(cookies);
 			HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserServiceInter {
 			int num = userMapper.updateUsers(userP);
 			if(num>0) {
 				String jsonUser = JSONObject.toJSONString(userMapper.getUsersId(userP.getId()));
-				Cookie cookies = new Cookie("shop-users", java.net.URLEncoder.encode(jsonUser, "UTF-8"));//序列化
+				Cookie cookies = new Cookie("shop-users", java.net.URLEncoder.encode(jsonUser, "UTF-8"));
 				HttpServletResponse response =((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getResponse();
 				response.addCookie(cookies);
 			}
@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserServiceInter {
 		session.removeAttribute("shop-users");
 		session.invalidate();
 		 Cookie[] cookies = request.getCookies();
-		 //循环删除cookie
+		 //循锟斤拷删锟斤拷cookie
 			for(Cookie ck : cookies) {
 				ck.setMaxAge(0);
 				response.addCookie(ck);
@@ -114,14 +114,14 @@ public class UserServiceImpl implements UserServiceInter {
 	@Override
 	public String AdminDleuser(Integer id,Integer shiro_id) throws Exception {
 		Map<String, String> map = new HashMap<String,String>();
-		if(shiro_id!=Shiros.SuperAdmin.getCode()) {//如果不是超级管理员
-			map.put("state", "-1");//权限不够
+		if(shiro_id!=Shiros.SuperAdmin.getCode()) {
+			map.put("state", "-1");
 		}else {
 			int num = userMapper.AdminDelsUsers(id);
 			if(num>0) {
-				map.put("state", "1");//删除成功
+				map.put("state", "1");
 			}else {
-				map.put("state", "0");//删除失败
+				map.put("state", "0");
 			}
 		}
 		return JSON.toJSONString(map);

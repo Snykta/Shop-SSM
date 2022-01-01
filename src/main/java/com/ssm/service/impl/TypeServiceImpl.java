@@ -36,13 +36,13 @@ public class TypeServiceImpl implements TypeServiceInter {
 		List<GoodsList> lists = goodsMa.getTypeIdList(id);
 		Map<String, String> map = new HashMap<String, String>();
 		if(shiro_id!=Shiros.SuperAdmin.getCode()) {
-			map.put("state", "-1");//权限不够
+			map.put("state", "-1");
 		}else if(lists!=null) {
-			map.put("state", "0");//无法删除
+			map.put("state", "0");
 		}else {
 			int num = goodMapper.admin_del_type(id);
 			if(num>0) {
-				map.put("state", "1");//删除成功
+				map.put("state", "1");
 			}
 		}
 		return JSON.toJSONString(map);

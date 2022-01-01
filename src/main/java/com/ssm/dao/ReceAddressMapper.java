@@ -9,7 +9,7 @@ import com.ssm.po.ReceAddress;
 public interface ReceAddressMapper {
 	
 	/**
-	 * ¸ù¾İid²éÑ¯ÊÕ»õµØÖ·
+	 * æ ¹æ®idæŸ¥è¯¢æ”¶è´§åœ°å€
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -17,7 +17,7 @@ public interface ReceAddressMapper {
 	ReceAddress getAddress(Integer id) throws Exception;
 	
 	/**
-	 * ¸üĞÂÊÕ»õµØÖ·
+	 * æ›´æ–°æ”¶è´§åœ°å€
 	 * @param address
 	 * @return
 	 * @throws Exception
@@ -25,7 +25,7 @@ public interface ReceAddressMapper {
 	int updateAddress(@Param("addres") ReceAddress address) throws Exception;
 	
 	/**
-	 * ÔÚ×¢²á³É¹¦ºó¼ÓÈë¸ÃµØÖ·µÄÓÃ»§Íâ¼ü
+	 * åœ¨æ³¨å†ŒæˆåŠŸååŠ å…¥è¯¥åœ°å€çš„ç”¨æˆ·å¤–é”®
 	 * @param userId
 	 * @return
 	 * @throws Exception

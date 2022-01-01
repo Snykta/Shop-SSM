@@ -11,7 +11,7 @@ import com.ssm.po.GoodsVo;
 public interface GoodsMapper {
 	
 	/**
-	 * ÒÔid²éÑ¯ÉÌÆ·
+	 *  ä»¥idæŸ¥è¯¢å•†å“
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -19,14 +19,14 @@ public interface GoodsMapper {
 	Goods getIdGoods(Integer id) throws Exception;
 	
 	/**
-	 * Ëæ»ú²éÑ¯Á½ÌõÉÌÆ·
+	 * éšæœºæŸ¥è¯¢ä¸¤æ¡å•†å“
 	 * @return
 	 * @throws Exception
 	 */
 	List<Goods> roundGoods() throws Exception;
 	
 	/**
-	 * ÒÔÖÖÀàid²éÑ¯ËùÓĞÉÌÆ·£¬ÓÃÓÚlistÒ³ÃæÕ¹Ê¾Í¬Ê±·ÖÒ³
+	 * ä»¥ç§ç±»idæŸ¥è¯¢æ‰€æœ‰å•†å“ï¼Œç”¨äºlisté¡µé¢å±•ç¤ºåŒæ—¶åˆ†é¡µ
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -34,7 +34,7 @@ public interface GoodsMapper {
 	List<GoodsList> getTypeIdList(Integer id) throws Exception;
 
 	/**
-	 * Ä£ºı²éÑ¯ÉÌÆ·
+	 * æ¨¡ç³ŠæŸ¥è¯¢å•†å“
 	 * @param value
 	 * @return
 	 * @throws Exception
@@ -42,28 +42,28 @@ public interface GoodsMapper {
 	List<Goods> searchByName(String value) throws Exception;
 	
 	/**
-	 * ¶à¶ÔÒ»²éÑ¯
+	 * å¤šå¯¹ä¸€æŸ¥è¯¢
 	 * @return
 	 * @throws Exception
 	 */
 	List<GoodsVo> AdminManyToOne(Integer num) throws Exception;
 	
 	/**
-	 * ×ÜÊı
+	 * æ€»æ•°
 	 * @return
 	 * @throws Exception
 	 */
 	int Admincounts() throws Exception;
 	
 	/**
-	 * É¾³ı
+	 * åˆ é™¤
 	 * @param id
 	 * @return
 	 * @throws Exception
 	 */
 	int AdminDelGoods(Integer id) throws Exception;
 	/**
-	 * ¹ÜÀíÔ±ÅúÁ¿É¾³ıÉÌÆ·
+	 * ç®¡ç†å‘˜æ‰¹é‡åˆ é™¤å•†å“
 	 * @param arryy
 	 * @return
 	 * @throws Exception
@@ -71,14 +71,14 @@ public interface GoodsMapper {
 	int AdminDels(String[] ids) throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±ĞŞ¸ÄÉÌÆ·
+	 * ç®¡ç†å‘˜ä¿®æ”¹å•†å“
 	 * @param goods
 	 * @return
 	 * @throws Exception
 	 */
 	int adminUpdatGoods(Goods goods) throws Exception;
 	/**
-	 * ¹ÜÀíÔ±Ìí¼ÓÉÌÆ·
+	 * ç®¡ç†å‘˜æ·»åŠ å•†å“
 	 * @param goods
 	 * @return
 	 * @throws Exception
@@ -86,7 +86,7 @@ public interface GoodsMapper {
 	int adminAddGoods(Goods goods) throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±×ªÒÆÉÌÆ·Àà±ğ
+	 *  ç®¡ç†å‘˜è½¬ç§»å•†å“ç±»åˆ«
 	 * @param goods
 	 * @return
 	 * @throws Exception

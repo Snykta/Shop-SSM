@@ -38,7 +38,7 @@ public class GoodsTypeHandler {
 			response.sendRedirect("/Shop-SSM/admin/goods_sort.html");
 		}else {
 			response.setContentType("text/html;charset=utf-8");
-			response.getWriter().println("<script>alert('ÃÌº” ß∞‹£°');location.href='/Shop-SSM/admin/add_type.html';</script>");
+			response.getWriter().println("<script>alert('Ê∑ªÂä†Â§±Ë¥•ÔºÅ');location.href='/Shop-SSM/admin/add_type.html';</script>");
 		}
 		
 	}
@@ -58,7 +58,7 @@ public class GoodsTypeHandler {
 			response.sendRedirect("/Shop-SSM/admin/goods_sort.html");
 		}else {
 			response.setContentType("text/html;charset=utf-8");
-			response.getWriter().println("<script>alert('–ﬁ∏ƒ ß∞‹£°');location.href='/Shop-SSM/admin/goods_sort.html';</script>");
+			response.getWriter().println("<script>alert('‰øÆÊîπÂ§±Ë¥•ÔºÅ');location.href='/Shop-SSM/admin/goods_sort.html';</script>");
 		}
 		
 	}

@@ -52,7 +52,7 @@ public class OrdersHandler {
 	@RequestMapping("/paysDing.do")
 	@ResponseBody
 	public String paysDing(@RequestBody String lists) throws Exception{
-		lists=URLDecoder.decode(lists, "utf-8");//转化，不然会乱码
+		lists=URLDecoder.decode(lists, "utf-8");//杞寲锛屼笉鐒朵細涔辩爜
 		return ordersServiceInter.addOrders(lists);
 	}
 	
@@ -69,7 +69,7 @@ public class OrdersHandler {
 	@ResponseBody
 	public String adminDaiDels(Integer id,Integer shiro_id) throws Exception {
 		if(id==null||shiro_id==null) {
-			return "<script>alert('非法请求');location.href='/Shop-SSM/admin/orders_dai.html';</script>";
+			return "<script>alert('闈炴硶璇锋眰');location.href='/Shop-SSM/admin/orders_dai.html';</script>";
 		}else {
 			return ordersServiceInter.adminDelsOrders(id, shiro_id);
 		}
@@ -87,13 +87,13 @@ public class OrdersHandler {
 	@ResponseBody
 	public String adminfahuoOrdes(Integer id) throws Exception{
 		if(id==null) {
-			return "<script>alert('非法请求');location.href='/Shop-SSM/admin/orders_weifa.html';</script>";
+			return "<script>alert('闈炴硶璇锋眰');location.href='/Shop-SSM/admin/orders_weifa.html';</script>";
 		}else {
 			boolean falg = ordersServiceInter.adminFaOrdes(id);
 			if(falg) {
-				return "<script>alert('发货成功');location.href='/Shop-SSM/admin/orders_weifa.html';</script>";
+				return "<script>alert('鍙戣揣鎴愬姛');location.href='/Shop-SSM/admin/orders_weifa.html';</script>";
 			}else {
-				return "<script>alert('发货失败');location.href='/Shop-SSM/admin/orders_weifa.html';</script>";
+				return "<script>alert('鍙戣揣澶辫触');location.href='/Shop-SSM/admin/orders_weifa.html';</script>";
 			}
 		}
 	}

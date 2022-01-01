@@ -44,7 +44,7 @@ public class GoodsServiceImpl implements GoodsServiceInter {
 
 	@Override
 	public String AdminManyToOne(Integer num) throws Exception {
-		//¶à¶ÔÒ»
+		//ï¿½ï¿½ï¿½Ò»
 		return JSON.toJSONString(goodsMapper.AdminManyToOne(num));
 	}
 
@@ -59,11 +59,11 @@ public class GoodsServiceImpl implements GoodsServiceInter {
 	public String AdmindelGoods(Integer id,Integer shiro_id) throws Exception {
 		Map<String, String> map = new  HashMap<String,String>();
 		if(shiro_id!=Shiros.SuperAdmin.getCode()) {
-			map.put("state", "-1");//È¨ÏÞ²»¹»
+			map.put("state", "-1");
 		}else {
 			int num = goodsMapper.AdminDelGoods(id);
 			if(num>0) {
-				map.put("state", "1");//É¾³ý³É¹¦
+				map.put("state", "1");
 			}
 		}
 		return JSON.toJSONString(map);
@@ -73,12 +73,12 @@ public class GoodsServiceImpl implements GoodsServiceInter {
 	public String AdminDels(String ids,Integer shiro_id) throws Exception {
 		Map<String, String> map = new  HashMap<String,String>();
 		if(shiro_id!=Shiros.SuperAdmin.getCode()) {
-			map.put("state", "-1");//È¨ÏÞ²»¹»
+			map.put("state", "-1");
 		}else {
 			String[] id = ids.split(",");
 			int num = goodsMapper.AdminDels(id);
 			if(num>0) {
-				map.put("state", "1");//É¾³ý³É¹¦
+				map.put("state", "1");
 			}
 		}
 		return JSON.toJSONString(map);
@@ -104,13 +104,13 @@ public class GoodsServiceImpl implements GoodsServiceInter {
 	public boolean AdminAddGood(Goods goods) throws Exception {
 		boolean bol = false;
 		if(goods==null||goods.getGoods_name()==null) {
-			bol = false;//Ê§°Ü
+			bol = false;
 		}else {
 			int num = goodsMapper.adminAddGoods(goods);
 			if(num>0) {
-				bol = true;//Ìí¼Ó³É¹¦
+				bol = true;
 			}else {
-				bol = false;//Ê§°Ü
+				bol = false;
 			}
 		}
 		return bol;
@@ -124,9 +124,9 @@ public class GoodsServiceImpl implements GoodsServiceInter {
 		}else {
 			int num = goodsMapper.adminUpdateByType(goods);
 			if(num>0) {
-				bol = true;//×ªÒÆ³É¹¦
+				bol = true;
 			}else {
-				bol = false;//Ê§°Ü
+				bol = false;
 			}
 		}
 		return bol;

@@ -31,7 +31,7 @@ public class AdminUserServiceImpl implements AdminUserServiceInter{
 			blo = true;
 			String jsonUser = JSONObject.toJSONString(user);
 			System.out.println(jsonUser);
-			Cookie cookies = new Cookie("admin-users", java.net.URLEncoder.encode(jsonUser, "UTF-8"));//ÐòÁÐ»¯
+			Cookie cookies = new Cookie("admin-users", java.net.URLEncoder.encode(jsonUser, "UTF-8"));
 			HttpServletResponse response =((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getResponse();
 			response.addCookie(cookies);
 			HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
@@ -48,7 +48,7 @@ public class AdminUserServiceImpl implements AdminUserServiceInter{
 		session.removeAttribute("admin-users");
 		session.invalidate();
 		 Cookie[] cookies = request.getCookies();
-		 //Ñ­»·É¾³ýcookie
+		 //Ñ­ï¿½ï¿½É¾ï¿½ï¿½cookie
 			for(Cookie ck : cookies) {
 				ck.setMaxAge(0);
 				response.addCookie(ck);

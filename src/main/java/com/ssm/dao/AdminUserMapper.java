@@ -8,7 +8,7 @@ import com.ssm.po.AdminUserOV;
 public interface AdminUserMapper {
 	
 	/**
-	 * 后台登录
+	 * 鍚庡彴鐧诲綍
 	 * @param adminUser
 	 * @return
 	 * @throws Exception
@@ -16,7 +16,7 @@ public interface AdminUserMapper {
 	AdminUser adminLogin(AdminUser adminUser) throws Exception;
 	
 	/**
-	 * 查询所有管理员
+	 * 鏌ヨ鎵�鏈夌鐞嗗憳
 	 * @return
 	 * @throws Exception
 	 */

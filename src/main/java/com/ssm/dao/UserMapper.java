@@ -8,13 +8,13 @@ import com.ssm.po.UserP;
 import com.ssm.po.UserPVo;
 
 /**
- * ÆÕÍ¨ÓÃ»§½Ó¿Ú
+ * æ™®é€šç”¨æˆ·æ¥å£
  * @author snykt
  *
  */
 public interface UserMapper {
 	/**
-	 * ÓÃ»§µÇÂ¼dao½Ó¿Ú
+	 * ç”¨æˆ·ç™»å½•daoæ¥å£
 	 * @param users
 	 * @param password
 	 * @return
@@ -23,7 +23,7 @@ public interface UserMapper {
 	UserP loginUsers(@Param("users") String users,@Param("password") String password) throws Exception;
 	
 	/**
-	 * ÓÃ»§ĞÅÏ¢ĞŞ¸Ädao
+	 *ç”¨æˆ·ä¿¡æ¯ä¿®æ”¹dao
 	 * @param userP
 	 * @return
 	 * @throws Exception
@@ -31,14 +31,14 @@ public interface UserMapper {
 	int updateUsers(UserP userP) throws Exception;
 	
 	/**
-	 * ²éÑ¯µ¥¸öÓÃ»§
+	 * æŸ¥è¯¢å•ä¸ªç”¨æˆ·
 	 * @param id
 	 * @return
 	 * @throws Exception
 	 */
 	UserP getUsersId(Integer id) throws Exception;
 	/**
-	 * ĞŞ¸ÃÃÜÂë
+	 * ä¿®è¯¥å¯†ç 
 	 * @param userP
 	 * @return
 	 * @throws Exception
@@ -47,28 +47,28 @@ public interface UserMapper {
 	
 	
 	/***
-	 * ¹ÜÀíÔ±²éÑ¯ËùÓĞÓÃ»§
+	 * ç®¡ç†å‘˜æŸ¥è¯¢æ‰€æœ‰ç”¨æˆ·
 	 * @return
 	 * @throws Exception
 	 */
 	List<UserP> AdminGetUser() throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±É¾³ı»áÔ±ÕËºÅ
+	 * ç®¡ç†å‘˜åˆ é™¤ä¼šå‘˜è´¦å·
 	 * @param id
 	 * @return
 	 * @throws Exception
 	 */
 	int AdminDelsUsers(Integer id) throws Exception;
 	/**
-	 * ¹ÜÀíÔ±²éÑ¯ÓÃ»§ÆìÏÂ¶©µ¥£¬Ò»¶Ô¶à·½Ê½²éÑ¯
+	 * ç®¡ç†å‘˜æŸ¥è¯¢ç”¨æˆ·æ——ä¸‹è®¢å•ï¼Œä¸€å¯¹å¤šæ–¹å¼æŸ¥è¯¢
 	 * @return
 	 * @throws Exception
 	 */
 	List<UserPVo> AdminOneToManyOrdes() throws Exception;
 	
 	/**
-	 * ÆÕÍ¨ÓÃ»§×¢²á
+	 * æ™®é€šç”¨æˆ·æ³¨å†Œ
 	 * @param userP
 	 * @return
 	 * @throws Exception

@@ -7,7 +7,7 @@ import com.ssm.po.UserP;
 
 public interface UserServiceInter {
 	/**
-	 * ÓÃ»§µÇÂ¼service½Ó¿Ú
+	 *ç”¨æˆ·ç™»å½•serviceæ¥å£
 	 * @param users
 	 * @param password
 	 * @return
@@ -17,21 +17,21 @@ public interface UserServiceInter {
 	
 	/**
 	 * 
-	 * ÓÃ»§ĞÅÏ¢ĞŞ¸Ä
+	 * ç”¨æˆ·ä¿¡æ¯ä¿®æ”¹
 	 * @param userP
 	 * @return
 	 * @throws Exception
 	 */
 	void updateUsers(UserP userP) throws Exception;
 	/**
-	 * ĞŞ¸ÄÃÜÂë
+	 * ä¿®æ”¹å¯†ç 
 	 * @param userP
 	 * @return
 	 * @throws Exception
 	 */
 	String updatePwds(UserP userP,String oldPwd) throws Exception;
 	/**
-	 * ÆÕÍ¨ÓÃ»§×¢²á
+	 *  æ™®é€šç”¨æˆ·æ³¨å†Œ
 	 * @param userP
 	 * @return
 	 * @throws Exception
@@ -39,7 +39,7 @@ public interface UserServiceInter {
 	boolean addPlusers(UserP userP) throws Exception;
 	
 	/**
-	 * ÍË³öµÇÂ¼
+	 * é€€å‡ºç™»å½•
 	 * @param request
 	 * @param response
 	 * @throws Exception
@@ -47,7 +47,7 @@ public interface UserServiceInter {
 	void longOut(HttpServletRequest request,HttpServletResponse response) throws Exception;
 	
 	/**
-	 * ÒÔid²éÑ¯ÓÃ»§
+	 * ä»¥idæŸ¥è¯¢ç”¨æˆ·
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -55,20 +55,20 @@ public interface UserServiceInter {
 	String AdminByIdPUser(Integer id) throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±²éÑ¯ËùÓĞÓÃ»§
+	 * ç®¡ç†å‘˜æŸ¥è¯¢æ‰€æœ‰ç”¨æˆ·
 	 * @return
 	 * @throws Exception
 	 */
 	String AdmingetByuser() throws Exception;
 	
 	/**
-	 * ¹ÜÀíÔ±É¾³ı»áÔ±ÕËºÅ
+	 * ç®¡ç†å‘˜åˆ é™¤ä¼šå‘˜è´¦å·
 	 * @return
 	 * @throws Exception
 	 */
 	String AdminDleuser(Integer id,Integer shiro_id) throws Exception;
 	/**
-	 * ¹ÜÀíÔ±²éÑ¯ÓÃ»§ÆìÏÂ¶©µ¥
+	 * ç®¡ç†å‘˜æŸ¥è¯¢ç”¨æˆ·æ——ä¸‹è®¢å•
 	 * @return
 	 * @throws Exception
 	 */

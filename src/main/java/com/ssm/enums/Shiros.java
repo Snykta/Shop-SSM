@@ -1,7 +1,7 @@
 package com.ssm.enums;
 
 public enum Shiros {
-	SuperAdmin(1,"³¬¼¶¹ÜÀíÔ±"),GeneralAdmin(2,"ÆÕÍ¨¹ÜÀíÔ±");
+	SuperAdmin(1,"è¶…çº§ç®¡ç†å‘˜"),GeneralAdmin(2,"æ™®é€šç®¡ç†å‘˜");
 	 private int code;
 	 private String name;
 	private Shiros(int code,String name) {

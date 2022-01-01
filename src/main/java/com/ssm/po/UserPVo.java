@@ -1,11 +1,7 @@
 package com.ssm.po;
 
 import java.util.List;
-/**
- * 用于一对多查询用户旗下的订单
- * @author snykt
- *
- */
+
 public class UserPVo extends UserP {
 	
 	private List<GoodsOrders> lists;

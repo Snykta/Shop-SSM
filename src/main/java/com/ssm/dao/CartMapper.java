@@ -9,7 +9,7 @@ import com.ssm.po.GoodsCart;
 public interface CartMapper {
 	/**
 	 * 
-	 * 	Ìí¼Ó¹ºÎï³µ
+	 * 	æ·»åŠ è´­ç‰©è½¦
 	 * @param cart
 	 * @return
 	 * @throws Exception
@@ -17,7 +17,7 @@ public interface CartMapper {
 	int addCart(GoodsCart cart) throws Exception;
 	
 	/**
-	 * ÒÔÃû×Ö²éÑ¯¹ºÎï³µ
+	 * ä»¥åå­—æŸ¥è¯¢è´­ç‰©è½¦
 	 * @param goods_name
 	 * @return
 	 * @throws Exception
@@ -25,7 +25,7 @@ public interface CartMapper {
 	GoodsCart findGetName(@Param("userId")Integer userId,@Param("goods_name")String goods_name) throws Exception;
 	
 	/**
-	 * ÒÔid¸üĞÂ
+	 * ä»¥idæ›´æ–°
 	 * @param cart
 	 * @return
 	 * @throws Exception
@@ -33,7 +33,7 @@ public interface CartMapper {
 	int updateByid(GoodsCart cart) throws Exception;
 	
 	/**
-	 * ÒÔÓÃ»§idÕ¹Ê¾ÓÃ»§¹ºÎï³µ
+	 * ä»¥ç”¨æˆ·idå±•ç¤ºç”¨æˆ·è´­ç‰©è½¦
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -41,7 +41,7 @@ public interface CartMapper {
 	List<GoodsCart> findByUserId(Integer id) throws Exception;
 	
 	/**
-	 * ÒÔidÉ¾³ı¹ºÎï³µ
+	 * ä»¥idåˆ é™¤è´­ç‰©è½¦
 	 * @param id
 	 * @return
 	 * @throws Exception
@@ -49,7 +49,7 @@ public interface CartMapper {
 	int delByid(Integer id) throws Exception;
 	
 	/**
-	 * ÒÔidÅúÁ¿É¾³ı
+	 * ä»¥idæ‰¹é‡åˆ é™¤
 	 * @param ids
 	 * @return
 	 */

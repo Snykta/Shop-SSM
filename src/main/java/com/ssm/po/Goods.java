@@ -2,13 +2,13 @@ package com.ssm.po;
 
 public class Goods {
 	private int id;
-	private String goods_name;//商品名称
-	private String goods_unit;//单位
-	private String goods_stock;//库存
-	private String goods_price;//单价
-	private String goods_present;//商品简介
-	private int goods_type;//商品种类
-	private String goods_img;//商品图片
+	private String goods_name;
+	private String goods_unit;
+	private String goods_stock;
+	private String goods_price;
+	private String goods_present;
+	private int goods_type;
+	private String goods_img;
 	public int getId() {
 		return id;
 	}

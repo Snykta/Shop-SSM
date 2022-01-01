@@ -24,8 +24,8 @@ public class CartServiceImpl implements CartServiceInter{
 	public String addCart(GoodsCart cart) throws Exception {
 		Map<String, String> map = new  HashMap<String, String>();
 		if(cart!=null) {
-			GoodsCart cartId = carts.findGetName(cart.getUsers_id(),cart.getGoods_name());//判断是否有该商品
-			//List<GoodsCart> lists = carts.findByUserId(cart.getUsers_id());//判断是否有该用户的订单
+			GoodsCart cartId = carts.findGetName(cart.getUsers_id(),cart.getGoods_name());
+			//List<GoodsCart> lists = carts.findByUserId(cart.getUsers_id());
 			if(cartId==null) {
 				int num = carts.addCart(cart);
 				if(num>0) {
@@ -44,7 +44,7 @@ public class CartServiceImpl implements CartServiceInter{
 				}
 			}
 		}else {
-			System.out.println("购物车Bug");
+			System.out.println("锟斤拷锟斤车Bug");
 		}
 		return JSON.toJSONString(map);
 	}

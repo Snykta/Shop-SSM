@@ -24,13 +24,13 @@ public class ShiroHandler {
 	@ResponseBody
 	public String updateAdminShiro(@PathVariable Integer shiroId,@PathVariable Integer userId) throws Exception {
 		if(shiroId==null||userId==null) {
-			return "<script>alert('·Ç·¨ÇëÇó£¡');location.href='/Shop-SSM/admin/AdminUserShiro.html'</script>";
+			return "<script>alert('ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½');location.href='/Shop-SSM/admin/AdminUserShiro.html'</script>";
 		}else {
 			boolean falg = shiroInter.AdminUpdateShi(shiroId, userId);
 			if(falg) {
-				return "<script>alert('ĞŞ¸Ä³É¹¦');location.href='/Shop-SSM/admin/AdminUserShiro.html'</script>";
+				return "<script>alert('ä¿®æ”¹æˆåŠŸ');location.href='/Shop-SSM/admin/AdminUserShiro.html'</script>";
 			}else {
-				return "<script>alert('ĞŞ¸ÄÊ§°Ü');location.href='/Shop-SSM/admin/AdminUserShiro.html'</script>";
+				return "<script>alert('ä¿®æ”¹å¤±è´¥');location.href='/Shop-SSM/admin/AdminUserShiro.html'</script>";
 			}
 		}
 	}

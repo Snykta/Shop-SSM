@@ -2,8 +2,8 @@ package com.ssm.po;
 
 public class GoodsType {
 	private int id;
-	private String type_name;//种类名称
-	private String date;//添加时间
+	private String type_name;
+	private String date;
 	public int getId() {
 		return id;
 	}

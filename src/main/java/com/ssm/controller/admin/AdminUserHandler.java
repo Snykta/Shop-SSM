@@ -25,7 +25,7 @@ public class AdminUserHandler {
 			response.sendRedirect("/Shop-SSM/admin/index.html");
 		}else {
 			response.setContentType("text/html;charset=utf-8");
-			response.getWriter().println("<script>alert('µÇÂ¼Ê§°Ü£¡');location.href='/Shop-SSM/admin/login.html';</script>");
+			response.getWriter().println("<script>alert('ç™»å½•å¤±è´¥');location.href='/Shop-SSM/admin/login.html';</script>");
 			
 		}
 	}

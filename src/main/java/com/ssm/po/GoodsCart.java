@@ -2,11 +2,11 @@ package com.ssm.po;
 
 public class GoodsCart {
 	private int id;
-	private String goods_name;//商品名称
-	private String goods_unit;//商品单位
-	private String goods_price;//商品价格
-	private int goods_num;//数量
-	private int users_id;//创建该购物车的用户id
+	private String goods_name;
+	private String goods_unit;
+	private String goods_price;
+	private int goods_num;
+	private int users_id;
 	public int getId() {
 		return id;
 	}

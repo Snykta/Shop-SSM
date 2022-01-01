@@ -2,7 +2,7 @@ package com.ssm.po;
 
 public class GoodsList extends Goods {
 	
-	private String type_name;//ÖÖÀàÃû³Æ
+	private String type_name;
 
 	public String getType_name() {
 		return type_name;

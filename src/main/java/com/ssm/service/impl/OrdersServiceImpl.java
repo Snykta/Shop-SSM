@@ -59,15 +59,15 @@ public class OrdersServiceImpl implements OrdersServiceInter {
 	public String addOrders(String lists) throws Exception {
 		Map<String, String> map = new HashMap<String, String>();
 		
-		 String jsonSubStr = lists.substring(6, lists.length());//·Ö¸î½ØÈ¡°ÑÍ·²¿½Øµô
+		 String jsonSubStr = lists.substring(6, lists.length());
 		 int sum = 1;
-		 JSONArray array = JSONArray.parseArray(jsonSubStr);//½ØÈ¡µôºó×ª³ÉlistÊı×é
+		 JSONArray array = JSONArray.parseArray(jsonSubStr);
 		 for(int i=0;i<array.size();i++) {
-			 JSONObject userJson = JSONObject.parseObject(array.getString(i));//±éÀúÃ»Ò»¸ö
-			 GoodsOrders goodsOrders = JSON.toJavaObject(userJson,GoodsOrders.class);//½«Ã¿Ò»¸öjson×ªÎª¶ÔÓ¦ÊµÌåÀà
-			 goodsOrders.setOrder_date(Time.getTimes());//Éú³ÉÊ±¼ä´Á
-			 goodsOrders.setOrder_code(Time.getTimeCode());//Éú³É¶©µ¥ºÅ
-			 goodsOrders.setOrder_state("Î´·¢»õ");//Ä¬ÈÏÎ´·¢»õ
+			 JSONObject userJson = JSONObject.parseObject(array.getString(i));
+			 GoodsOrders goodsOrders = JSON.toJavaObject(userJson,GoodsOrders.class);
+			 goodsOrders.setOrder_date(Time.getTimes());
+			 goodsOrders.setOrder_code(Time.getTimeCode());
+			 goodsOrders.setOrder_state("æœªå‘è´§");//é»˜è®¤æœªå‘è´§
 			  int num = orderMapper.addOrdersMappers(goodsOrders);
 			  sum = 1*num;
 		 }
@@ -91,11 +91,11 @@ public class OrdersServiceImpl implements OrdersServiceInter {
 		
 		Map<String, String> map = new HashMap<String,String>();
 		if(shiro_id!=Shiros.SuperAdmin.getCode()) {
-			map.put("state", "-1");//È¨ÏŞ²»¹»
+			map.put("state", "-1");//æƒé™ä¸å¤Ÿ
 		}else {
 			int num = orderMapper.deleteByidOrders(id);
 			if(num>0) {
-				map.put("state", "1");//É¾³ı³É¹¦
+				map.put("state", "1");//åˆ é™¤æˆåŠŸ
 			}
 		}
 		return JSON.toJSONString(map);

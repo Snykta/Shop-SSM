@@ -1,10 +1,6 @@
 package com.ssm.po;
 
-/**
- *  ’ªıµÿ÷∑
- * @author snykt
- *
- */
+
 public class ReceAddress {
 	private int id;
 	private String recename;
