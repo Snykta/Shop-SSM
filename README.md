@@ -4,8 +4,8 @@
 项目介绍地址：https://charones.com/archives/64.html
 
 
-运行后浏览器输入如下：
+**运行后浏览器输入如下：**
 
-前台地址：http://localhost:8888/Shop-SSM/shop-user/
+前台地址：`http://localhost:8888/Shop-SSM/shop-user/`
 
-后台地址：http://localhost:8888/Shop-SSM/admin/
+后台地址：`http://localhost:8888/Shop-SSM/admin/`
