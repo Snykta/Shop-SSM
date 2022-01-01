@@ -44,7 +44,7 @@ public class GoodsServiceImpl implements GoodsServiceInter {
 
 	@Override
 	public String AdminManyToOne(Integer num) throws Exception {
-		//���һ
+
 		return JSON.toJSONString(goodsMapper.AdminManyToOne(num));
 	}
 

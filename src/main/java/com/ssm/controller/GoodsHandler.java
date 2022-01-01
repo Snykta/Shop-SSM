@@ -99,7 +99,7 @@ public class GoodsHandler {
 			response.sendRedirect("/Shop-SSM/admin/goods_list.html");
 		}else {
 			response.setContentType("text/html;charset=utf-8");
-			response.getWriter().println("<script>alert('���ʧ�ܣ�');location.href='/Shop-SSM/admin/goods_list.html';</script>");
+			response.getWriter().println("<script>alert('添加失败！');location.href='/Shop-SSM/admin/goods_list.html';</script>");
 		}
 		
 	}

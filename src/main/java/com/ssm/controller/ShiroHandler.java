@@ -24,7 +24,7 @@ public class ShiroHandler {
 	@ResponseBody
 	public String updateAdminShiro(@PathVariable Integer shiroId,@PathVariable Integer userId) throws Exception {
 		if(shiroId==null||userId==null) {
-			return "<script>alert('�Ƿ�����');location.href='/Shop-SSM/admin/AdminUserShiro.html'</script>";
+			return "<script>alert('非法请求！');location.href='/Shop-SSM/admin/AdminUserShiro.html'</script>";
 		}else {
 			boolean falg = shiroInter.AdminUpdateShi(shiroId, userId);
 			if(falg) {

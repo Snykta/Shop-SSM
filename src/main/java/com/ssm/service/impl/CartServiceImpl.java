@@ -44,7 +44,7 @@ public class CartServiceImpl implements CartServiceInter{
 				}
 			}
 		}else {
-			System.out.println("���ﳵBug");
+			System.out.println("");
 		}
 		return JSON.toJSONString(map);
 	}
